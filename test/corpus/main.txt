@@ -246,3 +246,87 @@ Parenthesized expression with exponents & division
              (variable)
              (number)))
          (number)))))
+
+===============================================================================
+Parenthesized expression with exponents & division (no closing)
+===============================================================================
+
+(z + x) ** ((y / 2) - 1
+
+-------------------------------------------------------------------------------
+
+(expression
+   (exponent
+     (parenthesized_expression
+       (sum
+         (variable)
+         (variable)))
+     (parenthesized_expression
+       (subtraction
+         (parenthesized_expression
+           (division
+             (variable)
+             (number)))
+         (number)))))
+
+===============================================================================
+Function expression
+===============================================================================
+
+evalf(factor(x^2-2.8*x))
+
+-------------------------------------------------------------------------------
+(expression
+  (parenthesized_expression
+    (function_name)
+    (parenthesized_expression
+      (function_name)
+      (subtraction
+        (exponent
+          (variable)
+          (number))
+        (product
+          (number)
+          (variable))))))
+
+===============================================================================
+Function expression (no closing)
+===============================================================================
+
+evalf(factor(x^2-2.8*x
+
+-------------------------------------------------------------------------------
+
+(expression
+   (parenthesized_expression
+     (function_name)
+     (parenthesized_expression
+       (function_name)
+       (subtraction
+         (exponent
+           (variable)
+           (number))
+         (product
+           (number)
+           (variable))))))
+
+===============================================================================
+Function expression (with negatives)
+===============================================================================
+
+evalf(factor(x^-2--2.8*-x))
+
+-------------------------------------------------------------------------------
+
+(expression
+   (parenthesized_expression
+     (function_name)
+     (parenthesized_expression
+       (function_name)
+       (subtraction
+         (exponent
+           (variable)
+           (number))
+         (product
+           (number)
+           (variable))))))
