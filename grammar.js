@@ -9,6 +9,10 @@ module.exports = grammar({
     ],
   ],
 
+  externals: $ => [
+    $._closing_paren
+  ],
+
   rules: {
     expression: $ => $._expression,
     _expression: $ => choice(
@@ -71,7 +75,7 @@ module.exports = grammar({
       alias(optional($.variable), $.function_name),
       "(",
       $._expression,
-      ")",
+      $._closing_paren,
     ),
 
     number: _ => /-?\d+(\.\d+)?/,

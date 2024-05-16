@@ -225,8 +225,8 @@
           "name": "_expression"
         },
         {
-          "type": "STRING",
-          "value": ")"
+          "type": "SYMBOL",
+          "name": "_closing_paren"
         }
       ]
     },
@@ -262,7 +262,12 @@
       }
     ]
   ],
-  "externals": [],
+  "externals": [
+    {
+      "type": "SYMBOL",
+      "name": "_closing_paren"
+    }
+  ],
   "inline": [],
   "supertypes": []
 }
