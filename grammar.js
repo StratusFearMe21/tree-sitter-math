@@ -74,7 +74,7 @@ module.exports = grammar({
       ")",
     ),
 
-    number: _ => /\d+(\.\d+)?/,
+    number: _ => /-?\d+(\.\d+)?/,
     variable: _ => /([a-zA-Z$][0-9a-zA-Z_]*)/,
   }
 });

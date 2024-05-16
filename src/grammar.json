@@ -232,7 +232,7 @@
     },
     "number": {
       "type": "PATTERN",
-      "value": "\\d+(\\.\\d+)?"
+      "value": "-?\\d+(\\.\\d+)?"
     },
     "variable": {
       "type": "PATTERN",
