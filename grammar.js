@@ -19,7 +19,7 @@ module.exports = grammar({
       $.product,
       $.division,
       $.exponent,
-      $._parenthesized_expression,
+      $.parenthesized_expression,
     ),
 
     sum: $ => prec.left(
@@ -62,12 +62,13 @@ module.exports = grammar({
       "exponent",
       seq(
         field("base", $._expression),
-        "**",
+        choice("**", "^"),
         field("exponent", $._expression),
       ),
     ),
 
-    _parenthesized_expression: $ => seq(
+    parenthesized_expression: $ => seq(
+      alias(optional($.variable), $.function_name),
       "(",
       $._expression,
       ")",

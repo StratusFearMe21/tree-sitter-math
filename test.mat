@@ -1,0 +1,1 @@
+evalf(factor(x^2+2*x))

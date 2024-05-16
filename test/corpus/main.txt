@@ -219,9 +219,10 @@ Parenthesized expression
 
 (expression
  (product
-  left: (sum
-   left: (variable)
-   right: (variable))
+  left: (parenthesized_expression
+   (sum
+     left: (variable)
+     right: (variable)))
   right: (variable)))
 
 ===============================================================================
@@ -233,12 +234,15 @@ Parenthesized expression with exponents & division
 -------------------------------------------------------------------------------
 
 (expression
- (exponent
-  base: (sum
-   left: (variable)
-   right: (variable))
-  exponent: (subtraction
-   left: (division
-    left: (variable)
-    right: (number))
-   right: (number))))
+   (exponent
+     (parenthesized_expression
+       (sum
+         (variable)
+         (variable)))
+     (parenthesized_expression
+       (subtraction
+         (parenthesized_expression
+           (division
+             (variable)
+             (number)))
+         (number)))))
